@@ -933,3 +933,148 @@
   font-size: 0.78rem;
   border-top: 1px solid var(--border);
 }
+
+/* Mode Selector */
+.mode-selector {
+  display: inline-flex;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.25rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(12px);
+  z-index: 1;
+  position: relative;
+}
+
+.mode-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: calc(var(--radius) - 4px);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mode-btn:hover:not(:disabled) {
+  color: var(--text);
+}
+
+.mode-btn--active {
+  background: rgba(124, 92, 255, 0.15);
+  color: var(--text);
+  box-shadow: 0 0 15px rgba(124, 92, 255, 0.25);
+  border: 1px solid rgba(124, 92, 255, 0.3);
+}
+
+/* Resume Input & Dropzone */
+.resume-input {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.resume-input__dropzone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(12px);
+}
+
+.resume-input__dropzone:hover {
+  border-color: var(--accent);
+  background: rgba(124, 92, 255, 0.04);
+}
+
+.resume-input__dropzone--active {
+  border-color: var(--accent-2);
+  background: rgba(0, 245, 212, 0.05);
+  box-shadow: 0 0 25px rgba(0, 245, 212, 0.15);
+}
+
+.resume-input__dropzone--has-file {
+  border-style: solid;
+  border-color: rgba(74, 222, 128, 0.3);
+  background: rgba(74, 222, 128, 0.02);
+  padding: 1.5rem 1.5rem;
+}
+
+.resume-input__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resume-input__icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-input__text-main {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.resume-input__text-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.resume-input__browse-btn {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.8rem;
+}
+
+.resume-input__file-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.resume-input__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.resume-input__filename {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  word-break: break-all;
+}
+
+.resume-input__filesize {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.resume-input__remove-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  font-size: 0.85rem;
+  transition: transform 0.1s;
+}
+
+.resume-input__remove-btn:hover {
+  transform: scale(1.2);
+}

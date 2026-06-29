@@ -9,19 +9,22 @@ const OPENERS = [
 
 const SCORE_ROASTS = {
   high: [
-    'Not bad. We wanted to roast you, but you made it weirdly hard.',
-    'Solid site. We found issues, but nothing that screams "GeoCities reunion".',
-    'You are one rebrand away from being insufferably good.',
+    'Not bad. We wanted to roast you, but you made it weirdly hard. It\'s clean, but probably sterile and boring.',
+    'Solid site. We found issues, but nothing that screams "I coded this in MS Paint while half-asleep".',
+    'You are one rebrand away from being insufferably proud of yourself.',
+    'Alright, you can build a webpage. Want a sticker? Go show your mom, she might pretend to care.'
   ],
   mid: [
-    'Your site is giving "I can fix him" energy.',
-    'Not terrible. Not great. Very 2014 LinkedIn profile.',
-    'The bones are there. The flesh needs a UX therapist.',
+    'Your site is giving "I read a Medium article on web design once and made it my entire personality" energy.',
+    'Not terrible. Not great. The digital equivalent of lukewarm tap water.',
+    'The bones are there. The flesh is decaying, and the design needs a serious UX intervention.',
+    'It works, but looking at it makes us feel like we\'re stuck in a zoom meeting that should have been an email.'
   ],
   low: [
-    'This site looks like it was built during a power outage.',
-    'We have seen MySpace pages with better structure.',
-    'Your CSS and your priorities need a long vacation together.',
+    'This site looks like it was compiled during a power outage by a raccoon on espresso.',
+    'We have seen early 2000s forum threads with better formatting and self-respect.',
+    'Your CSS stylesheet and your life choices need to take a long, reflective walk together.',
+    'It\'s like a digital dumpster fire, except the dumpster is nested in three separate wrapper divs.'
   ],
 };
 

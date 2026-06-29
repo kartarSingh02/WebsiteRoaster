@@ -1,7 +1,7 @@
 import { getScoreRoast } from '../../services/roastGenerator.js';
 
 export default function ScoreCard({ data }) {
-  const roast = getScoreRoast(data.score);
+  const roast = data.customRoast || getScoreRoast(data.score);
   const scoreClass =
     data.score >= 80 ? 'score--good' : data.score >= 55 ? 'score--mid' : 'score--bad';
 

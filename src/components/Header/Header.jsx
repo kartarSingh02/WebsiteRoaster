@@ -4,8 +4,8 @@ export default function Header() {
       <div className="header__brand">
         <span className="header__logo" aria-hidden="true">🔥</span>
         <div>
-          <span className="header__name">WebSite Roaster</span>
-          <span className="header__tagline">High-tech honesty engine</span>
+          <span className="header__name">Roaster</span>
+          <span className="header__tagline">High-tech honesty engine for websites & resumes</span>
         </div>
       </div>
       <div className="header__status">

@@ -7,18 +7,25 @@ const CTA_KEYWORDS = [
 ];
 
 const OUTDATED_PATTERNS = [
-  { id: 'marquee', regex: /<marquee\b/i, label: 'Marquee tags', roast: 'Your text is doing the Macarena. Let it stand still.' },
-  { id: 'blink', regex: /<blink\b/i, label: 'Blink tags', roast: 'Blink tags? My eyes filed a HR complaint.' },
-  { id: 'frameset', regex: /<frameset\b/i, label: 'Framesets', roast: 'Framesets died when dial-up was still cool.' },
-  { id: 'font-tag', regex: /<font\b/i, label: '<font> tags', roast: 'CSS called. It wants its job back.' },
-  { id: 'center-tag', regex: /<center\b/i, label: '<center> tags', roast: 'Flexbox exists. Just saying.' },
-  { id: 'guestbook', regex: /guestbook|sign our guest/i, label: 'Guestbook vibes', roast: 'A guestbook? What year is this, 2003?' },
-  { id: 'under-construction', regex: /under construction|coming soon/i, label: '"Under construction"', roast: 'Still under construction? The internet grew up.' },
-  { id: 'hit-counter', regex: /hit counter|visitor counter|you are visitor/i, label: 'Hit counter', roast: 'Visitor counter spotted. GeoCities sends its regards.' },
-  { id: 'flash', regex: /swfobject|\.swf|adobe flash/i, label: 'Flash content', roast: 'Flash? Adobe retired it. You should too.' },
-  { id: 'table-layout', regex: /<table[^>]*>[\s\S]*?<\/table>/gi, label: 'Table layouts', roast: 'Tables are for data, not your entire layout.', check: (html, doc) => doc.querySelectorAll('table').length >= 3 },
-  { id: 'ie-conditional', regex: /<!--\[if IE\]/i, label: 'IE conditional comments', roast: 'Internet Explorer is a museum piece now.' },
-  { id: 'jquery-old', regex: /jquery[-.]?(1\.[0-9]|2\.[0-4])/i, label: 'Ancient jQuery', roast: 'That jQuery version remembers MySpace.' },
+  { id: 'marquee', regex: /<marquee\b/i, label: 'Marquee tags', roast: 'Your text is sliding across the page like a Windows 95 screensaver. Make it stop.' },
+  { id: 'blink', regex: /<blink\b/i, label: 'Blink tags', roast: 'Blink tags? My eyes are filing a formal HR complaint.' },
+  { id: 'frameset', regex: /<frameset\b/i, label: 'Framesets', roast: 'Framesets belong in a history museum next to floppy disks.' },
+  { id: 'font-tag', regex: /<font\b/i, label: '<font> tags', roast: 'Using inline font tags in 2026? CSS is crying in the corner.' },
+  { id: 'center-tag', regex: /<center\b/i, label: '<center> tags', roast: 'Center tags? Use Flexbox or Grid. Center is a relic of Netscape.' },
+  { id: 'guestbook', regex: /guestbook|sign our guest/i, label: 'Guestbook vibes', roast: 'A guestbook? Who is signing this, your grandmother?' },
+  { id: 'under-construction', regex: /under construction|coming soon/i, label: '"Under construction"', roast: 'Still "under construction"? The internet grew up and moved out while you were building this.' },
+  { id: 'hit-counter', regex: /hit counter|visitor counter|you are visitor/i, label: 'Hit counter', roast: 'A hit counter? GeoCities called, they want their single digit traffic indicator back.' },
+  { id: 'flash', regex: /swfobject|\.swf|adobe flash/i, label: 'Flash content', roast: 'Flash is so dead it\'s fossilized. Let it go.' },
+  { id: 'table-layout', regex: /<table[^>]*>[\s\S]*?<\/table>/gi, label: 'Table layouts', roast: 'Using tables for layouts? What is next, inline spacers and transparent GIFs?', check: (html, doc) => doc.querySelectorAll('table').length >= 3 },
+  { id: 'ie-conditional', regex: /<!--\[if IE\]/i, label: 'IE conditional comments', roast: 'Internet Explorer conditional checks? Even Microsoft abandoned IE. You should too.' },
+  { id: 'jquery-old', regex: /jquery[-.]?(1\.[0-9]|2\.[0-4])/i, label: 'Ancient jQuery', roast: 'Your jQuery version remembers the dawn of the smartphone era.' },
+  { id: 'dead-links', regex: /href=["']#["']/i, label: 'Dead links', roast: 'Overuse of href="#". Clicking links shouldn\'t just scroll me back to the top of my disappointment.', check: (html, doc) => doc.querySelectorAll('a[href="#"]').length >= 4 },
+  { id: 'lazy-title', regex: /<title>(?:Vite\s*\+\s*React|Document|Webpack\s*App)<\/title>/i, label: 'Lazy default title', roast: 'Leaving the default template title? Tells us you finished this in 5 minutes and didn\'t care.' },
+  { id: 'div-soup', regex: /<div/i, label: 'Div soup', roast: 'Your HTML is 90% divs. Semantic elements are free, we promise.', check: (html, doc) => {
+      const divs = doc.querySelectorAll('div').length;
+      const semantic = doc.querySelectorAll('main, nav, header, footer, section, article').length;
+      return divs > 15 && divs > semantic * 4;
+    }},
 ];
 
 const TREND_CHECKS = [
